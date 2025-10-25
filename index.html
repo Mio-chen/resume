@@ -1,0 +1,1480 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dongmei Chen | 陈冬梅 | Professional Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* 全局样式重置 */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+      font-family: "Inter", sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #444;
+      --card-bg: #fff;
+      --border-color: #f0f0f0;
+      --hover-color: #f0f0f0;
+      --muted-color: #777;
+      --tag-bg: #f5f5f5;
+    }
+
+    .dark-mode {
+      --bg-color: #1a1a1a;
+      --text-color: #e0e0e0;
+      --card-bg: #2d2d2d;
+      --border-color: #3d3d3d;
+      --hover-color: #3d3d3d;
+      --muted-color: #b0b0b0;
+      --tag-bg: #3d3d3d;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-weight: 300;
+      font-size: 0.95rem;
+    }
+
+    a { 
+      color: var(--text-color); 
+      text-decoration: none; 
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: #007bff;
+    }
+
+    img { 
+      max-width: 100%; 
+      height: auto; 
+      border-radius: 8px;
+    }
+
+    /* 容器样式 */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* 导航栏样式 */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 2rem;
+      background-color: var(--card-bg);
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar .logo {
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      margin-right: 1rem;
+    }
+
+    .nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .control-btn {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      cursor: pointer;
+      font-size: 1rem;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .control-btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    .navbar .hamburger {
+      display: none; 
+      flex-direction: column; 
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .navbar .hamburger span {
+      width: 24px; 
+      height: 2px; 
+      background-color: var(--text-color);
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none; 
+      position: fixed; 
+      top: 4rem;
+      left: 0; 
+      width: 100%; 
+      background-color: var(--card-bg);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      transform: translateY(-100%);
+      z-index: 998;
+    }
+
+    .mobile-nav.show {
+      display: block;
+      transform: translateY(0);
+    }
+
+    .mobile-nav a {
+      display: block; 
+      margin: 0.8rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* 板块通用样式 */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* 过滤按钮样式 */
+    .filter-container {
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.4rem 0.9rem;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-color);
+    }
+
+    .filter-btn.active {
+      background-color: var(--hover-color);
+      border-color: var(--muted-color);
+    }
+
+    /* Hero 区域 */
+    .hero {
+      padding: 6rem 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 1.5rem;
+      }
+    }
+
+    .hero .profile-img {
+      max-width: 260px;
+      margin: 0 auto;
+      border-radius: 50%;
+      object-fit: cover;
+      width: 260px;
+      height: 260px;
+    }
+
+    .hero .text-content h1 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+      line-height: 1.2;
+    }
+
+    .hero .text-content .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted-color);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero .text-content .desc {
+      font-size: 0.9rem;
+      color: var(--muted-color);
+      line-height: 1.6; 
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .text-content .buttons {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .hero .text-content .buttons a {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color); 
+      border-radius: 4px;
+      font-size: 0.8rem;
+      transition: all 0.2s ease;
+    }
+
+    .hero .text-content .buttons a:hover {
+      background-color: var(--hover-color);
+    }
+
+    /* About 区域 */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-item {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .about-item h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.8rem;
+    }
+
+    .skill-tag {
+      padding: 0.35rem 0.7rem;
+      background: var(--tag-bg);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--muted-color);
+    }
+
+    /* Experience 区域 */
+    #experience {
+      background-color: var(--bg-color);
+    }
+
+    .single-card {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .experience-entry {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .experience-entry:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .experience-entry .period {
+      color: var(--muted-color);
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .experience-entry h3 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+
+    .experience-entry .company {
+      color: var(--muted-color);
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .experience-entry .desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Publications 区域 */
+    .publication-entry {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .publication-entry:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .publication-entry p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Projects 区域 */
+    #projects {
+      background-color: var(--bg-color);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .project-entry {
+      background: var(--card-bg);
+      padding: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .project-entry .year {
+      color: var(--muted-color);
+      font-size: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-entry h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.4rem;
+      overflow-x: auto;
+      padding-bottom: 0.4rem;
+      scrollbar-width: thin;
+    }
+
+    .project-tag {
+      white-space: nowrap;
+      padding: 0.25rem 0.5rem;
+      background: var(--tag-bg);
+      border-radius: 4px;
+      font-size: 0.7rem;
+      color: var(--muted-color);
+    }
+
+    /* Portfolio 区域 */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 992px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .portfolio-item {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Contact 区域 */
+    #contact {
+      background-color: var(--bg-color);
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-info, .contact-form {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-info h3, .contact-form h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-info .desc {
+      font-size: 0.9rem;
+      color: var(--muted-color);
+    }
+
+    .form-notice {
+      font-size: 0.8rem;
+      color: var(--muted-color);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-size: 0.85rem;
+      color: var(--muted-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .btn {
+      padding: 0.7rem 1.2rem;
+      border: 1px solid var(--border-color);
+      background: transparent;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      color: var(--text-color);
+    }
+
+    .btn:hover {
+      background-color: var(--hover-color);
+    }
+
+    /* 页脚区域 */
+    .footer {
+      text-align: center; 
+      padding: 1.5rem;
+      color: var(--muted-color);
+      font-size: 0.75rem;
+      margin-top: 3rem;
+      border-top: 1px solid var(--border-color);
+      background-color: var(--card-bg);
+    }
+
+    /* 响应式调整 */
+    @media (max-width: 768px) {
+      .hero .text-content h1 {
+        font-size: 1.8rem;
+      }
+      .navbar .nav-links, .nav-controls {
+        display: none;
+      }
+      .navbar .hamburger {
+        display: flex;
+      }
+      section {
+        padding: 3rem 0;
+      }
+    }
+
+    /* 汉堡菜单动画 */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(4px, -4px);
+    }
+
+    /* 平滑滚动 */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 当前导航高亮 */
+    .nav-links a.active, .mobile-nav a.active {
+      color: #007bff;
+      font-weight: 500;
+    }
+
+    /* 移动端控制按钮容器 */
+    .mobile-controls {
+      display: none;
+      padding: 0.5rem 2rem;
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      justify-content: flex-end;
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-controls {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 移动端控制按钮 -->
+  <div class="mobile-controls">
+    <button id="mobileLangBtn" class="control-btn" title="切换语言">
+      <i class="fas fa-language"></i>
+    </button>
+    <button id="mobileThemeBtn" class="control-btn" title="切换夜间/日间模式">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <a href="#hero" class="logo" id="logo">Dongmei Chen</a>
+    
+    <div class="nav-content">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="nav-controls">
+        <button id="langBtn" class="control-btn" title="切换语言">
+          <i class="fas fa-language"></i>
+        </button>
+        <button id="themeBtn" class="control-btn" title="切换夜间/日间模式">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+  <!-- 手机端导航 -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Hero 区域 -->
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="profile">
+          <img src="images/profile.jpg" alt="Dongmei Chen profile photo" class="profile-img">
+        </div>
+        <div class="text-content">
+          <h1 id="heroName">Dongmei Chen</h1>
+          <p class="subtitle">GR/Policy Specialist and NGO Event/Project Coordinator</p>
+          <p class="desc">
+            Focusing on social research, NGO studies, and CSR, I specialize in statistical analysis, 
+            in-depth interviews, event planning, and project management. 
+            I also enjoy photography as a means of documenting social phenomena.
+          </p>
+          <div class="buttons">
+            <a href="#publications">View Publications</a>
+            <a href="#contact">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About 区域 -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About</h2>
+      <div class="about-content">
+        <div class="about-item">
+          <h3>Professional Profile</h3>
+          <p class="desc about-desc-1">
+            I am an experienced social research expert specializing in social issue research, NGO organizational development, and corporate social responsibility (CSR) fields. I possess government relations coordination, event planning, and project management capabilities, as well as a strong academic research foundation.
+          </p>
+          <p class="desc about-desc-2" style="margin-top: 1rem;">
+            I believe that through rigorous research and in-depth analysis, we can better understand social phenomena and drive positive social change. Additionally, I also use photography to document the diverse aspects of society, telling authentic stories through visual language.
+          </p>
+        </div>
+        
+        <div class="about-item">
+          <h3>Professional Skills</h3>
+          <div class="skills-list">
+            <span class="skill-tag">Social Research</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">In-depth Interviews</span>
+            <span class="skill-tag">NGO &amp; CSR research</span>
+            <span class="skill-tag">Photography &amp; PS</span>
+            <span class="skill-tag">Video Editing</span>
+            <span class="skill-tag">MS Office</span>
+            <span class="skill-tag">AI Software</span>
+          </div>
+        </div>
+        
+        <div class="about-item">
+          <h3>Education</h3>
+          <div style="margin-bottom: 1.2rem;">
+            <p style="font-weight: 400;">Ph.D. Student in Sociology</p>
+            <p class="desc">Shanghai University, Shanghai, China | 2023-2025</p>
+          </div>
+          <div style="margin-bottom: 1.2rem;">
+            <p style="font-weight: 400;">Master of Sociology</p>
+            <p class="desc">East China University of Science &amp; Technology, Shanghai, China | 2020-2023</p>
+          </div>
+          <div>
+            <p style="font-weight: 400;">Bachelor of Management (Accounting)</p>
+            <p class="desc">Sichuan University of Science &amp; Engineering, Sichuan, China | 2014-2018</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience 区域 -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="single-card">
+        <div class="experience-entry">
+          <p class="period">2020-2024</p>
+          <h3>Research Assistant: Policy Analysis and Academic Activities Coordination</h3>
+          <p class="company">University Social Science Research Project Team, Shanghai, China</p>
+          <p class="desc">
+            • Supported 8 community projects, led some core research (interview protocols, 20+ facilitated interviews/forums)<br>
+            • Analyzed policy-grassroots gaps, delivered 500k+ academic outputs (6 papers, 2 core), partial govt adoption<br>
+            • Built research-improvement cycle and strengthened cross-sector communication<br>
+            • Coordinated China Sociology Annual Conference sub-forums with 160+ engagement<br>
+            • Managed stakeholder engagement with 10+ govt/enterprises in Shanghai and Zhejiang
+          </p>
+        </div>
+        
+        <div class="experience-entry">
+          <p class="period">2019-2020</p>
+          <h3>Community Officer Assistant &amp; Volunteer</h3>
+          <p class="company">NGO: Lijiang Health and Environment Research Center, Yunnan, China</p>
+          <p class="desc">
+            • Led the "Rural Pesticide Use Survey in the Three Parallel Rivers Area"<br>
+            • Designed dual-dimensional questionnaires and conducted over 50 household field surveys<br>
+            • Delivered a 30,000-character research report<br>
+            • Coordinated with village committees, NGOs and Peking University teams<br>
+            • Managed volunteer teams and provided English translation for GEF project proposals
+          </p>
+        </div>
+        
+        <div class="experience-entry">
+          <p class="period">2018-2019</p>
+          <h3>Planning Manager</h3>
+          <p class="company">Shanghai Yilian, Shanghai, China</p>
+          <p class="desc">
+            • Conducted user research on Shanghai's young adults<br>
+            • Aligned B-stakeholders (enterprises/communities/media) to address needs<br>
+            • Designed "theater + public welfare" cross-programs with 6+ events and 200+ participants<br>
+            • Integrated G/B/C/NGO resources and established 20+ partner database<br>
+            • Built "needs-resources" matching system and strengthened relationship management
+          </p>
+        </div>
+        
+        <div class="experience-entry">
+          <p class="period">2015-2017</p>
+          <h3>President &amp; Reporter</h3>
+          <p class="company">Sichuan University of Science &amp; Engineering, Student Union &amp; Press Corps, Sichuan, China</p>
+          <p class="desc">
+            • Managed 20+ university events (World Food Day etc.) with 10k+ attendees<br>
+            • Handled workflow, budget, staffing &amp; risk control<br>
+            • Built full-cycle project management skills<br>
+            • Led team to establish campus services with 70% reputation growth<br>
+            • Developed a 70k+ user "Lost &amp; Found" platform
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications 区域 -->
+  <section id="publications">
+    <div class="container">
+      <h2 class="section-title">Publications</h2>
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all" data-target="publication">All</button>
+        <button class="filter-btn" data-filter="journal" data-target="publication">Journal Articles</button>
+        <button class="filter-btn" data-filter="dissertation" data-target="publication">Dissertation</button>
+      </div>
+      <div class="single-card" id="publications-container">
+        <!-- 论文按时间倒序排列 -->
+        <div class="publication-entry" data-type="dissertation" data-year="2023">
+          <p style="font-weight: 400; margin-bottom: 0.5rem;">Chen Dongmei. (2023)</p>
+          <p>Study of Integrative Governance in Metropolitan Rural Communities: The Case Study of Shanghai Xing Village.</p>
+          <p class="desc" style="margin-top: 0.5rem;">East China University of Science &amp; Technology Journal</p>
+        </div>
+        
+        <div class="publication-entry" data-type="journal" data-year="2023">
+          <p style="font-weight: 400; margin-bottom: 0.5rem;">Yang Jun, Chen Dongmei. (2023)</p>
+          <p>The Construction of Rural Community Community from the Perspective of Life.</p>
+          <p class="desc" style="margin-top: 0.5rem;">Study and Practice (CSSCI, PUK)</p>
+        </div>
+        
+        <div class="publication-entry" data-type="journal" data-year="2021">
+          <p style="font-weight: 400; margin-bottom: 0.5rem;">Yang Jun, Chen Dongmei. (2021)</p>
+          <p>The History of Public Square Dancing and the Attribute Analysis of Urban Mass Culture.</p>
+          <p class="desc" style="margin-top: 0.5rem;">Urban Insight (AMI)</p>
+        </div>
+        
+        <div class="publication-entry" data-type="journal" data-year="2021">
+          <p style="font-weight: 400; margin-bottom: 0.5rem;">Unsigned. (2021)</p>
+          <p>Spatial Structure and Social Integration: Research Approach to Classified Governance Population-Inflow Communities.</p>
+          <p class="desc" style="margin-top: 0.5rem;">Fujian Tribune</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects 区域 -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all" data-target="project">All Projects</button>
+        <button class="filter-btn" data-filter="government" data-target="project">Government-commissioned</button>
+        <button class="filter-btn" data-filter="national" data-target="project">National Social Science Fund</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-entry" data-type="government">
+          <p class="year">2024</p>
+          <h3>Urban Regeneration: Neighborhood Governance Led by Party Building</h3>
+          <div class="project-tags">
+            <span class="project-tag">Urban Regeneration</span>
+            <span class="project-tag">Community Governance</span>
+          </div>
+        </div>
+        
+        <div class="project-entry" data-type="government">
+          <p class="year">2023</p>
+          <h3>Community Governance in Metropolitan Suburbs (2023VZH047)</h3>
+          <div class="project-tags">
+            <span class="project-tag">Rural Revitalization</span>
+            <span class="project-tag">Living Circle</span>
+            <span class="project-tag">Scenario Planning</span>
+          </div>
+        </div>
+        
+        <div class="project-entry" data-type="government">
+          <p class="year">2021</p>
+          <h3>Standardized Management of Village Residence</h3>
+          <div class="project-tags">
+            <span class="project-tag">Government Power</span>
+            <span class="project-tag">Refined Governance</span>
+            <span class="project-tag">Community</span>
+          </div>
+        </div>
+        
+        <div class="project-entry" data-type="national">
+          <p class="year">2022</p>
+          <h3>Research on institutionalized elderly people with disabilities and dementia and their needs &amp; Research on the structural power change of rural families and family policy innovation(19BRK025 &amp; 18CSH031)</h3>
+          <div class="project-tags">
+            <span class="project-tag">Rural Families</span>
+            <span class="project-tag">Family Structure</span>
+            <span class="project-tag">Elderly Services</span>
+          </div>
+        </div>
+        
+        <div class="project-entry" data-type="national">
+          <p class="year">2021</p>
+          <h3>A Study on the Reconstruction of Publicity in Urban Community Governance(16CSH068)</h3>
+          <div class="project-tags">
+            <span class="project-tag">Urban Governance</span>
+            <span class="project-tag">Publicness</span>
+            <span class="project-tag">Individualization</span>
+          </div>
+        </div>
+        
+        <div class="project-entry" data-type="national">
+          <p class="year">2021</p>
+          <h3>Research on the social mechanism of grassroots self-governance in areas with population influx Research on Co-operative Construction of Main Body and Institutional Mechanism of Grassroots Autonomy(16ZDA078)</h3>
+          <div class="project-tags">
+            <span class="project-tag">Classified Governance</span>
+            <span class="project-tag">Population Mobility</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio 区域 -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title">Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/portfolio1.jpg" alt="Documentary photograph of rural landscape">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio2.jpg" alt="Community activities documentation">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio3.jpg" alt="Urban social phenomena">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio4.jpg" alt="Portrait of community member">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio5.jpg" alt="Public space usage documentation">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio6.jpg" alt="Social activity documentation">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio7.jpg" alt="Cultural traditions photography">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio8.jpg" alt="Community development documentation">
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio9.jpg" alt="Social issue documentation">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact 区域 -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3 style="font-size: 1.1rem; font-weight: 400; margin-bottom: 1.2rem;">Get in Touch</h3>
+          <p class="desc contact-desc" style="margin-bottom: 1.5rem;">
+            I'm always open to discussing research collaborations, potential job opportunities, or freelance activities.
+          </p>
+          
+          <div style="margin-bottom: 1.2rem;">
+            <p style="font-weight: 400; margin-bottom: 0.4rem;" class="contact-label-email">Email</p>
+            <a href="mailto:dadacd2@163.com" class="desc contact-email">dadacd2@163.com</a>
+          </div>
+          
+          <div>
+            <p style="font-weight: 400; margin-bottom: 0.4rem;" class="contact-label-location">Location</p>
+            <p class="desc contact-location">Baoshan District, Shanghai, China</p>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h3 style="font-size: 1.1rem; font-weight: 400; margin-bottom: 0.5rem;">Send a Message</h3>
+          <p class="form-notice" id="formNotice">
+            This form cannot send messages directly. Please contact me via email: dadacd2@163.com
+          </p>
+          <form>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Enter your message"></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    © 2025 Dongmei Chen. All rights reserved.
+  </footer>
+
+  <script>
+    // 存储翻译文本
+    const translations = {
+      en: {
+        about: "About",
+        experience: "Experience",
+        publications: "Publications",
+        projects: "Projects",
+        portfolio: "Portfolio",
+        contact: "Contact",
+        heroName: "Dongmei Chen",
+        logo: "Dongmei Chen",
+        heroSubtitle: "GR/Policy Specialist and NGO Event/Project Coordinator",
+        heroDesc: "Focusing on social research, NGO studies, and CSR, I specialize in statistical analysis, in-depth interviews, event planning, and project management. I also enjoy photography as a means of documenting social phenomena.",
+        viewPublications: "View Publications",
+        contactMe: "Contact Me",
+        professionalProfile: "Professional Profile",
+        professionalSkills: "Professional Skills",
+        education: "Education",
+        getInTouch: "Get in Touch",
+        sendMessage: "Send Message",
+        yourName: "Your Name",
+        yourEmail: "Your Email",
+        message: "Message",
+        enterYourName: "Enter your name",
+        enterYourEmail: "Enter your email",
+        enterYourMessage: "Enter your message",
+        filterAllPub: "All",
+        filterJournal: "Journal Articles",
+        filterDissertation: "Dissertation",
+        filterAllProj: "All Projects",
+        filterGovernment: "Government-commissioned",
+        filterNational: "National Social Science Fund",
+        footerText: "© 2025 Dongmei Chen. All rights reserved.",
+        aboutDesc1: "I am an experienced social researcher specializing in social issue research, NGO organizational development, and corporate social responsibility (CSR) fields. I possess government relations coordination, event planning, and project management capabilities, as well as a strong academic research foundation.",
+        aboutDesc2: "I believe that through rigorous research and in-depth analysis, we can better understand social phenomena and drive positive social change. Additionally, I also use photography to document the diverse aspects of society, telling authentic stories through visual language.",
+        contactDesc: "I'm always open to discussing research collaborations, potential job opportunities, or freelance activities.",
+        contactLabelEmail: "Email",
+        contactLabelLocation: "Location",
+        contactEmail: "dadacd2@163.com",
+        contactLocation: "Baoshan District, Shanghai, China",
+        formNotice: "This form cannot send messages directly. Please contact me via email: dadacd2@163.com"
+      },
+      zh: {
+        about: "关于我",
+        experience: "工作经历",
+        publications: "学术成果",
+        projects: "研究项目",
+        portfolio: "作品集",
+        contact: "联系我",
+        heroName: "陈冬梅",
+        logo: "陈冬梅",
+        heroSubtitle: "政府关系/政策研究专员及NGO活动/项目协调员",
+        heroDesc: "专注于社会研究、NGO研究和企业社会责任领域，擅长统计分析、深度访谈、活动策划和项目管理，同时我也热爱摄影以记录社会现象。",
+        viewPublications: "查看学术成果",
+        contactMe: "联系我",
+        professionalProfile: "个人简介",
+        professionalSkills: "专业技能",
+        education: "教育背景",
+        getInTouch: "保持联系",
+        sendMessage: "发送消息",
+        yourName: "您的姓名",
+        yourEmail: "您的邮箱",
+        message: "留言内容",
+        enterYourName: "请输入您的姓名",
+        enterYourEmail: "请输入您的邮箱",
+        enterYourMessage: "请输入留言内容",
+        filterAllPub: "所有",
+        filterJournal: "期刊论文",
+        filterDissertation: "学位论文",
+        filterAllProj: "所有项目",
+        filterGovernment: "政府委托项目",
+        filterNational: "国家社科基金项目",
+        footerText: "© 2025 陈冬梅. 保留所有权利.",
+        aboutDesc1: "我是一名经验丰富的社会调研人员，专注于社会问题研究、NGO 组织发展和企业社会责任 (CSR) 领域，兼具政府关系对接、活动策划与项目管理能力，且具备学术研究基础。我通过专业研究方法、数据分析能力，为各类组织提供有价值的洞察和建议，助力项目落地与策略优化。",
+        aboutDesc2: "我相信通过严谨的调研和深入的分析，可以更好地理解社会现象，推动积极的社会变革。同时，我也通过摄影记录社会百态，用视觉语言讲述真实的故事。",
+        contactDesc: "我始终乐意探讨研究合作、潜在的工作机会或自由职业活动。",
+        contactLabelEmail: "邮箱",
+        contactLabelLocation: "地址",
+        contactEmail: "dadacd2@163.com",
+        contactLocation: "中国上海市宝山区",
+        formNotice: "表单暂无法直接发送，建议通过邮箱 dadacd2@163.com 联系我"
+      }
+    };
+
+    // 存储英文内容
+    const englishContent = {
+      experienceEntries: [
+        {
+          title: "Research Assistant (Policy Analysis & Academic Event Coordination)",
+          company: "University Social Science Research Project Team, Shanghai, China",
+          desc: "• Supported 8 community projects, led some core research (interview protocols, 20+ facilitated interviews/forums)<br>• Analyzed policy-grassroots gaps, delivered 500k+ academic outputs (6 papers, 2 core), partial govt adoption<br>• Built research-improvement cycle and strengthened cross-sector communication<br>• Coordinated China Sociology Annual Conference sub-forums with 160+ engagement<br>• Managed stakeholder engagement with 10+ govt/enterprises in Shanghai and Zhejiang"
+        },
+        {
+          title: "Community Officer Assistant & Volunteer",
+          company: "NGO: Lijiang Health and Environment Research Center, Yunnan, China",
+          desc: "• Led the \"Rural Pesticide Use Survey in the Three Parallel Rivers Area\"<br>• Designed dual-dimensional questionnaires and conducted over 50 household field surveys<br>• Delivered a 30,000-character research report<br>• Coordinated with village committees, NGOs and Peking University teams<br>• Managed volunteer teams and provided English translation for GEF project proposals"
+        },
+        {
+          title: "Planning Manager",
+          company: "Shanghai Yilian, Shanghai, China",
+          desc: "• Conducted user research on Shanghai's young adults<br>• Aligned B-stakeholders (enterprises/communities/media) to address needs<br>• Designed \"theater + public welfare\" cross-programs with 6+ events and 200+ participants<br>• Integrated G/B/C/NGO resources and established 20+ partner database<br>• Built \"needs-resources\" matching system and strengthened relationship management"
+        },
+        {
+          title: "President & Reporter",
+          company: "Sichuan University of Science & Engineering, Student Union & Press Corps, Sichuan, China",
+          desc: "• Managed 20+ university events (World Food Day etc.) with 10k+ attendees<br>• Handled workflow, budget, staffing & risk control<br>• Built full-cycle project management skills<br>• Led team to establish campus services with 70% reputation growth<br>• Developed a 70k+ user \"Lost & Found\" platform"
+        }
+      ],
+      publicationEntries: [
+        {
+          authors: "Chen Dongmei. (2023)",
+          title: "Study of Integrative Governance in Metropolitan Rural Communities: The Case Study of Shanghai Xing Village.",
+          source: "East China University of Science & Technology Journal"
+        },
+        {
+          authors: "Yang Jun, Chen Dongmei. (2023)",
+          title: "The Construction of Rural Community Community from the Perspective of Life.",
+          source: "Study and Practice (CSSCI, PUK)"
+        },
+        {
+          authors: "Yang Jun, Chen Dongmei. (2021)",
+          title: "The History of Public Square Dancing and the Attribute Analysis of Urban Mass Culture.",
+          source: "Urban Insight (AMI)"
+        },
+        {
+          authors: "Unsigned. (2021)",
+          title: "Spatial Structure and Social Integration: Research Approach to Classified Governance Population-Inflow Communities.",
+          source: "Fujian Tribune (CSSCI, PUK)"
+        }
+      ],
+      projectEntries: [
+        { title: "Urban Regeneration: Neighborhood Governance Led by Party Building", tags: ["Urban Regeneration", "Community Governance"] },
+        { title: "Community Governance in Metropolitan Suburbs (2023VZH047)", tags: ["Rural Revitalization", "Living Circle", "Scenario Planning"] },
+        { title: "Standardized Management of Village Residence", tags: ["Government Power", "Refined Governance", "Community"] },
+        { title: "Research on institutionalized elderly people with disabilities and dementia and their needs & Research on the structural power change of rural families and family policy innovation(19BRK025 & 18CSH031)", tags: ["Rural Families", "Family Structure", "Elderly Services"] },
+        { title: "A Study on the Reconstruction of Publicity in Urban Community Governance(16CSH068)", tags: ["Urban Governance", "Publicness", "Individualization"] },
+        { title: "Research on the social mechanism of grassroots self-governance in areas with population influx Research on Co-operative Construction of Main Body and Institutional Mechanism of Grassroots Autonomy(16ZDA078)", tags: ["Classified Governance", "Population Mobility"] }
+      ],
+      portfolioAlt: [
+        "Documentary photograph of rural landscape",
+        "Community activities documentation",
+        "Urban social phenomena",
+        "Portrait of community member",
+        "Public space usage documentation",
+        "Social activity documentation",
+        "Cultural traditions photography",
+        "Community development documentation",
+        "Social issue documentation"
+      ],
+      educationEntries: [
+        { degree: "Ph.D. Student in Sociology", school: "Shanghai University, Shanghai, China | 2023-2025" },
+        { degree: "Master of Sociology", school: "East China University of Science & Technology, Shanghai, China | 2020-2023" },
+        { degree: "Bachelor of Management (Accounting)", school: "Sichuan University of Science & Engineering, Sichuan, China | 2014-2018" }
+      ],
+      skillTags: ["Social Research", "Data Analysis", "In-depth Interviews", "NGO & CSR research", "Photography & PS", "Video Editing", "MS Office", "AI Software"]
+    };
+
+    // 存储中文内容
+    const chineseContent = {
+      experienceEntries: [
+        {
+          title: "研究助理（政策分析与学术活动统筹方向）",
+          company: "高校社科研究项目组，上海，中国",
+          desc: "• 参与8个社区项目，主导部分核心研究（访谈方案设计、20+场访谈/论坛主持）<br>• 分析政策-基层差距，产出50万字+学术成果（6篇论文，其中2篇核心），部分成果被政府采纳<br>• 构建研究-改进循环机制，加强跨部门沟通协作<br>• 协调中国社会学年会分论坛，参与人数160+<br>• 管理上海和浙江地区10+政府/企业的利益相关者参与"
+        },
+        {
+          title: "社区官员助理 & 志愿者",
+          company: "NGO: 丽江健康与环境研究中心，云南，中国",
+          desc: "• 主导\"三江并流地区农村农药使用调查\"项目<br>• 设计双维度调查问卷，完成50+户实地调研<br>• 产出3万字研究报告<br>• 协调村委会、NGO与北京大学团队合作<br>• 管理志愿者团队，为 “全球环境基金” 项目提供英文翻译"
+        },
+        {
+          title: "策划经理",
+          company: "上海易恋，上海，中国",
+          desc: "• 开展针对上海青年群体的用户研究<br>• 整合B端利益相关者（企业/社区/媒体）资源以满足需求<br>• 设计\"剧场+公益\"跨界项目，举办6+场活动，参与人数200+<br>• 整合政府/企业/消费者/NGO资源，建立20+合作伙伴数据库<br>• 构建\"需求-资源\"匹配系统，加强合作关系管理"
+        },
+        {
+          title: "主席 & 记者",
+          company: "四川轻化工大学学委会 & 学生融媒体中心，四川，中国",
+          desc: "• 组织管理大学活动20场+（世界粮食日等），参与人数10k+<br>• 负责流程、预算、人员配置和风险控制等，培养全周期项目管理技能<br>• 带领团队建立校园服务机制，声誉提升70%<br>• 创建7万+用户的\"失物招领\"平台"
+        }
+      ],
+      publicationEntries: [
+        {
+          authors: "陈冬梅. (2023)",
+          title: "大都市农村社区的整合性治理研究：以上海星村为例",
+          source: "华东理工大学硕士论文"
+        },
+        {
+          authors: "杨君，陈冬梅. (2023)",
+          title: "生活视角下的乡村社区共同体建设研究",
+          source: "学习与实践（CSSCI、北核）"
+        },
+        {
+          authors: "杨君，陈冬梅. (2021)",
+          title: "广场舞的演变历史与城市大众文化属性分析",
+          source: "城市观察（AMI入库）"
+        },
+        {
+          authors: "未署名. (2021)",
+          title: "空间结构与社会整合：人口流入型社区分类治理的研究进路",
+          source: "福建论坛(人文社会科学版)（CSSCI、北核）"
+        }
+      ],
+      projectEntries: [
+        { title: "城市更新：党建引领下街区治理", tags: ["城市更新", "社区治理"] },
+        { title: "大都市郊区社区治理共同体建构研究 (2023VZH047)", tags: ["乡村振兴", "生活圈", "场景规划"] },
+        { title: "村居规范化管理和精细化治理", tags: ["政府权力", "精细化治理", "社区"] },
+        { title: "失能失智老人的机构养老状况及需求研究+农村家庭结构权变及家庭政策创新研究(19BRK025 & 18CSH031)", tags: ["农村家庭", "家庭结构", "老年服务"] },
+        { title: "城市社区治理中的公共性重构研究 (16CSH068)", tags: ["城市治理", "公共性", "个体化"] },
+        { title: "构建全民共建共享的社会治理格局研究：聚焦人口流入型地区（子课题三）(16ZDA078)", tags: ["分类治理", "人口流动"] }
+      ],
+      portfolioAlt: [
+        "乡村景观纪实摄影",
+        "社区活动社会纪实",
+        "城市社会现象",
+        "社区成员肖像",
+        "公共空间使用纪实",
+        "社会活动纪实",
+        "文化传统摄影",
+        "社区发展纪实",
+        "社会问题纪实"
+      ],
+      educationEntries: [
+        { degree: "博士阶段研究（社会学）", school: "上海大学，上海，中国 | 2023-2025" },
+        { degree: "社会学硕士", school: "华东理工大学，上海，中国 | 2020-2023" },
+        { degree: "管理学学士（会计学）", school: "四川轻化工大学，四川，中国 | 2014-2018" }
+      ],
+      skillTags: ["社会研究", "数据分析", "深度访谈", "NGO与CSR研究", "摄影与PS制作", "视频编辑", "MS Office", "AI软件"]
+    };
+
+    // 当前语言和主题状态
+    let currentLang = 'en';
+    let isDarkMode = false;
+
+    // DOM元素缓存
+    const langBtn = document.getElementById('langBtn');
+    const mobileLangBtn = document.getElementById('mobileLangBtn');
+    const themeBtn = document.getElementById('themeBtn');
+    const mobileThemeBtn = document.getElementById('mobileThemeBtn');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav a');
+    const sectionTitles = document.querySelectorAll('.section-title');
+    
+    // 缓存所有需要翻译的元素
+    const translatableElements = {
+      logo: document.getElementById('logo'),
+      heroName: document.getElementById('heroName'),
+      heroSubtitle: document.querySelector('.hero .subtitle'),
+      heroDesc: document.querySelector('.hero .desc'),
+      viewPublicationsBtn: document.querySelectorAll('.hero .buttons a')[0],
+      contactMeBtn: document.querySelectorAll('.hero .buttons a')[1],
+      aboutTitles: document.querySelectorAll('.about-item h3'),
+      aboutDesc1: document.querySelector('.about-desc-1'),
+      aboutDesc2: document.querySelector('.about-desc-2'),
+      skillTags: document.querySelectorAll('.skill-tag'),
+      educationEntries: document.querySelectorAll('.about-item:last-child > div'),
+      experienceEntries: document.querySelectorAll('.experience-entry'),
+      publicationEntries: document.querySelectorAll('.publication-entry'),
+      projectEntries: document.querySelectorAll('.project-entry'),
+      portfolioImages: document.querySelectorAll('.portfolio-item img'),
+      filterButtons: document.querySelectorAll('.filter-btn'),
+      contactInfoTitle: document.querySelector('.contact-info h3'),
+      contactFormTitle: document.querySelector('.contact-form h3'),
+      contactDesc: document.querySelector('.contact-desc'),
+      contactLabelEmail: document.querySelector('.contact-label-email'),
+      contactLabelLocation: document.querySelector('.contact-label-location'),
+      contactEmail: document.querySelector('.contact-email'),
+      contactLocation: document.querySelector('.contact-location'),
+      formNotice: document.getElementById('formNotice'),
+      formLabels: document.querySelectorAll('.form-group label'),
+      formPlaceholders: {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        message: document.getElementById('message')
+      },
+      sendMessageBtn: document.querySelector('.contact-form .btn'),
+      footerText: document.querySelector('.footer')
+    };
+
+    // 语言切换功能
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'zh' : 'en';
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      // 更新导航链接
+      navLinks[0].textContent = translations[currentLang].about;
+      navLinks[1].textContent = translations[currentLang].experience;
+      navLinks[2].textContent = translations[currentLang].publications;
+      navLinks[3].textContent = translations[currentLang].projects;
+      navLinks[4].textContent = translations[currentLang].portfolio;
+      navLinks[5].textContent = translations[currentLang].contact;
+      
+      // 更新板块标题
+      sectionTitles[0].textContent = translations[currentLang].about;
+      sectionTitles[1].textContent = translations[currentLang].experience;
+      sectionTitles[2].textContent = translations[currentLang].publications;
+      sectionTitles[3].textContent = translations[currentLang].projects;
+      sectionTitles[4].textContent = translations[currentLang].portfolio;
+      sectionTitles[5].textContent = translations[currentLang].contact;
+      
+      // 更新Logo和姓名
+      translatableElements.logo.textContent = translations[currentLang].logo;
+      translatableElements.heroName.textContent = translations[currentLang].heroName;
+      
+      // 更新Hero区域
+      translatableElements.heroSubtitle.textContent = translations[currentLang].heroSubtitle;
+      translatableElements.heroDesc.textContent = translations[currentLang].heroDesc;
+      translatableElements.viewPublicationsBtn.textContent = translations[currentLang].viewPublications;
+      translatableElements.contactMeBtn.textContent = translations[currentLang].contactMe;
+      
+      // 更新About区域标题和内容
+      translatableElements.aboutTitles[0].textContent = translations[currentLang].professionalProfile;
+      translatableElements.aboutTitles[1].textContent = translations[currentLang].professionalSkills;
+      translatableElements.aboutTitles[2].textContent = translations[currentLang].education;
+      
+      // 更新专业简介内容
+      translatableElements.aboutDesc1.textContent = translations[currentLang].aboutDesc1;
+      translatableElements.aboutDesc2.textContent = translations[currentLang].aboutDesc2;
+      
+      // 更新技能标签
+      const skills = currentLang === 'en' ? englishContent.skillTags : chineseContent.skillTags;
+      translatableElements.skillTags.forEach((tag, index) => {
+        tag.textContent = skills[index];
+      });
+      
+      // 更新教育背景
+      const eduContent = currentLang === 'en' ? englishContent.educationEntries : chineseContent.educationEntries;
+      translatableElements.educationEntries.forEach((entry, index) => {
+        entry.querySelector('p:first-child').textContent = eduContent[index].degree;
+        entry.querySelector('.desc').textContent = eduContent[index].school;
+      });
+      
+      // 更新工作经历
+      const expContent = currentLang === 'en' ? englishContent.experienceEntries : chineseContent.experienceEntries;
+      translatableElements.experienceEntries.forEach((entry, index) => {
+        entry.querySelector('h3').textContent = expContent[index].title;
+        entry.querySelector('.company').textContent = expContent[index].company;
+        entry.querySelector('.desc').innerHTML = expContent[index].desc;
+      });
+      
+      // 更新过滤按钮
+      translatableElements.filterButtons[0].textContent = translations[currentLang].filterAllPub;
+      translatableElements.filterButtons[1].textContent = translations[currentLang].filterJournal;
+      translatableElements.filterButtons[2].textContent = translations[currentLang].filterDissertation;
+      translatableElements.filterButtons[3].textContent = translations[currentLang].filterAllProj;
+      translatableElements.filterButtons[4].textContent = translations[currentLang].filterGovernment;
+      translatableElements.filterButtons[5].textContent = translations[currentLang].filterNational;
+      
+      // 更新论文内容
+      const pubContent = currentLang === 'en' ? englishContent.publicationEntries : chineseContent.publicationEntries;
+      translatableElements.publicationEntries.forEach((entry, index) => {
+        entry.querySelector('p:first-child').textContent = pubContent[index].authors;
+        entry.querySelector('p:nth-child(2)').textContent = pubContent[index].title;
+        entry.querySelector('.desc').textContent = pubContent[index].source;
+      });
+      
+      // 更新研究项目
+      const projContent = currentLang === 'en' ? englishContent.projectEntries : chineseContent.projectEntries;
+      translatableElements.projectEntries.forEach((entry, index) => {
+        entry.querySelector('h3').textContent = projContent[index].title;
+        
+        // 更新项目标签
+        const tagsContainer = entry.querySelector('.project-tags');
+        tagsContainer.innerHTML = '';
+        projContent[index].tags.forEach(tagText => {
+          const tag = document.createElement('span');
+          tag.className = 'project-tag';
+          tag.textContent = tagText;
+          tagsContainer.appendChild(tag);
+        });
+      });
+      
+      // 更新作品集图片alt属性
+      const portfolioAlt = currentLang === 'en' ? englishContent.portfolioAlt : chineseContent.portfolioAlt;
+      translatableElements.portfolioImages.forEach((img, index) => {
+        img.alt = portfolioAlt[index];
+      });
+      
+      // 更新Contact区域
+      translatableElements.contactInfoTitle.textContent = translations[currentLang].getInTouch;
+      translatableElements.contactFormTitle.textContent = translations[currentLang].sendMessage;
+      translatableElements.contactDesc.textContent = translations[currentLang].contactDesc;
+      translatableElements.contactLabelEmail.textContent = translations[currentLang].contactLabelEmail;
+      translatableElements.contactLabelLocation.textContent = translations[currentLang].contactLabelLocation;
+      translatableElements.contactEmail.textContent = translations[currentLang].contactEmail;
+      translatableElements.contactLocation.textContent = translations[currentLang].contactLocation;
+      
+      // 更新表单提示文字
+      translatableElements.formNotice.textContent = translations[currentLang].formNotice;
+      
+      translatableElements.formLabels[0].textContent = translations[currentLang].yourName;
+      translatableElements.formLabels[1].textContent = translations[currentLang].yourEmail;
+      translatableElements.formLabels[2].textContent = translations[currentLang].message;
+      translatableElements.formPlaceholders.name.placeholder = translations[currentLang].enterYourName;
+      translatableElements.formPlaceholders.email.placeholder = translations[currentLang].enterYourEmail;
+      translatableElements.formPlaceholders.message.placeholder = translations[currentLang].enterYourMessage;
+      translatableElements.sendMessageBtn.textContent = translations[currentLang].sendMessage;
+      
+      // 更新页脚
+      translatableElements.footerText.textContent = translations[currentLang].footerText;
+    }
+
+    // 主题切换功能
+    function toggleTheme() {
+      isDarkMode = !isDarkMode;
+      document.body.classList.toggle('dark-mode', isDarkMode);
+      
+      // 更新主题按钮图标
+      if (isDarkMode) {
+        themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        mobileThemeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+      } else {
+        themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        mobileThemeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+      }
+    }
+
+    // 汉堡菜单切换
+    function toggleMobileNav() {
+      const mobileNav = document.getElementById('mobileNav');
+      const hamburger = document.querySelector('.hamburger');
+      mobileNav.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    }
+
+    // 点击导航链接后关闭移动菜单
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileNav').classList.remove('show');
+        document.querySelector('.hamburger').classList.remove('active');
+      });
+    });
+
+    // 滚动时高亮当前导航
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      document.querySelectorAll('.nav-links a, .mobile-nav a').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // 过滤功能实现
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const filter = this.getAttribute('data-filter');
+        const target = this.getAttribute('data-target');
+        
+        // 更新按钮状态
+        document.querySelectorAll(`.filter-btn[data-target="${target}"]`).forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+        
+        // 过滤项目
+        document.querySelectorAll(`.${target}-entry`).forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-type') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 阻止表单默认提交行为
+    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // 显示提示
+      alert(translations[currentLang].formNotice);
+    });
+
+    // 绑定事件监听器
+    langBtn.addEventListener('click', toggleLanguage);
+    mobileLangBtn.addEventListener('click', toggleLanguage);
+    themeBtn.addEventListener('click', toggleTheme);
+    mobileThemeBtn.addEventListener('click', toggleTheme);
+
+    // 页面加载完成后初始化语言显示
+    window.addEventListener('DOMContentLoaded', function() {
+      updateLanguage();
+    });
+  </script>
+
+
+    </body></html>
